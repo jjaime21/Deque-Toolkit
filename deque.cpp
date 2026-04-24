@@ -12,6 +12,21 @@
 
 using namespace std;
 
+Deque::Deque(){
+  blockmap = new int[mapSize];
+  for(int i=0;i<mapSize;i++){
+    blockmap[i] = new int[blockSize];
+  }
+}
+
+Deque::~Deque(){
+  for(int i = 0; i < last_block; i++){
+    delete[] blockmap[i];
+  }
+
+  delete[] blockmap;
+}
+
 int Deque::front() {
   if(currentSize > 0) {
     return blockmap[first_block][first_element];
