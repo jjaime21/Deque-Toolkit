@@ -12,15 +12,34 @@
 
 using namespace std;
 
-Deque::Deque(){
-  blockmap = new int[mapSize];
-  for(int i=0;i<mapSize;i++){
-    blockmap[i] = new int[blockSize];
-  }
+//We got help from the Deque Data Structure videos on Canvas.
+
+int& Deque::operator[](int index) {
+  //Finding row from index
+  int row = first_block + ((first_element + index) / blockSize);
+
+  //Finding column from index
+  int col = (first_element + index) % blockSize;
+
+  return blockmap[row][col];
 }
 
-Deque::~Deque(){
-  for(int i = 0; i < last_block; i++){
+Deque::Deque() {
+  mapSize = 4000;
+  blockmap = new int*[mapSize];
+  for (int i = 0; i < mapSize; i++) {
+    blockmap[i] = new int[blockSize];
+  }
+  
+  currentSize = 0;
+  first_block = mapSize / 2;
+  last_block = first_block;
+  first_element = 0;
+  last_element = 0;
+}
+
+Deque::~Deque() {
+  for (int i = 0; i < mapSize; i++) {
     delete[] blockmap[i];
   }
 

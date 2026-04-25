@@ -14,43 +14,49 @@ using namespace std;
 
 int main() {
 
-  deque blockmap;
+  Deque myBlockmap;
   cout << "Automated tests here" << endl;
+  cout << "Deque is empty: " << myBlockmap.empty() << endl;
+  
   cout << "push_front test" << endl;
 
-  for(int i=0;i<=1000;i++){
-    blockmap.push_front(i);
+  for (int i = 0; i <= 1000; i++) {
+    myBlockmap.push_front(i);
   }
   cout << "Test complete" << endl;
- cout << "Current size: " << blockmap.size() << endl;
- cout << "First element: " << blockmap.front() << "  Last element: " << blockmap.last() << endl << endl;
+  cout << "Current size: " << myBlockmap.size() << endl;
+  cout << "First element: " << myBlockmap.front() << "  Last element: " << myBlockmap.back() << endl << endl;
+  cout << "Deque is empty: " << myBlockmap.empty() << endl;
 
   cout << "push_back test" << endl;
 
-  for (int i=0;i<1000;i++){
-    blockmap.push_back(i);
+  for (int i = 0; i < 1000; i++) {
+    myBlockmap.push_back(i);
   }
   cout << "push_back complete" << endl;
 
-  cout << "Current size: " << blockmap.size() << endl;
-  cout << "First element: " << blockmap.front() << "  Last element: " << blockmap.last() << endl << endl;
+  cout << "Current size: " << myBlockmap.size() << endl;
+  cout << "First element: " << myBlockmap.front() << "  Last element: " << myBlockmap.back() << endl << endl;
+  cout << "Deque is empty: " << myBlockmap.empty() << endl;
 
   cout << "pop_front test" << endl;
-  for(int i=0;i<1000;i++){
-    blockmap.pop_front();
+  for (int i = 0; i < 1000; i++) {
+    myBlockmap.pop_front();
   }
 
-   cout << "Current size: " << blockmap.size() << endl;
-   cout << "First element: " << blockmap.front() << "  Last element: " << blockmap.last() << endl << endl;
+   cout << "Current size: " << myBlockmap.size() << endl;
+   cout << "First element: " << myBlockmap.front() << "  Last element: " << myBlockmap.back() << endl << endl;
+   cout << "Deque is empty: " << myBlockmap.empty() << endl;
 
    cout << "pop_back test" << endl;
 
-   for(int i=0;i<500;i++){
-     blockmap.pop_back();
+   for (int i = 0; i < 500; i++) {
+     myBlockmap.pop_back();
    }
 
-    cout << "Current size: " << blockmap.size() << endl;
-    cout << "First element: " << blockmap.front() << "  Last element: " << blockmap.last() << endl << endl;
+    cout << "Current size: " << myBlockmap.size() << endl;
+    cout << "First element: " << myBlockmap.front() << "  Last element: " << myBlockmap.back() << endl << endl;
+    cout << "Deque is empty: " << myBlockmap.empty() << endl;
 
     cout << "End of testing" << endl;
     
